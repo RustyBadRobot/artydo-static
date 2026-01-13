@@ -5,47 +5,647 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artydo | Empowering Creative Ventures</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+              sans: ["Inter", "sans-serif"],
             },
             colors: {
               artydo: {
-                green: '#34D399', // Minty green from logo
-                blue: '#60A5FA',  // Cornflower blue from logo
-                dark: '#1E293B',  // Slate 800
-                text: '#334155',  // Slate 700
-              }
-            }
-          }
-        }
-      }
+                green: "#34D399",
+                blue: "#60A5FA",
+                dark: "#1E293B",
+                text: "#334155",
+              },
+            },
+          },
+        },
+      };
     </script>
     <style>
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
         -webkit-font-smoothing: antialiased;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "vite": "https://esm.sh/vite@^7.3.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
-  }
-}
-</script>
-</head>
+  </head>
   <body class="bg-slate-50 text-slate-800">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <header
+      id="site-header"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-5"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+          <a
+            class="flex-shrink-0 cursor-pointer"
+            href="#"
+            aria-label="Artydo home"
+          >
+            <div class="text-3xl font-extrabold tracking-tight leading-none">
+              <span class="text-teal-400">arty</span>
+              <span class="text-blue-400">do</span>
+            </div>
+          </a>
+
+          <nav class="hidden md:flex space-x-8" aria-label="Primary">
+            <a
+              href="#"
+              class="text-slate-600 hover:text-blue-500 font-medium transition-colors"
+              >Home</a
+            >
+            <a
+              href="#billing"
+              class="text-slate-600 hover:text-blue-500 font-medium transition-colors"
+              >Billing Support</a
+            >
+            <a
+              href="#brands"
+              class="text-slate-600 hover:text-blue-500 font-medium transition-colors"
+              >Our Brands</a
+            >
+            <a
+              href="#contact"
+              class="text-slate-600 hover:text-blue-500 font-medium transition-colors"
+              >Contact</a
+            >
+          </nav>
+
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-slate-600 hover:text-slate-900"
+            type="button"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <svg
+              id="menu-open-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+            <svg
+              id="menu-close-icon"
+              class="hidden"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="md:hidden bg-white border-b border-gray-100 shadow-lg absolute w-full hidden"
+      >
+        <div class="px-4 pt-2 pb-6 space-y-2">
+          <a
+            href="#"
+            class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-blue-500 hover:bg-slate-50"
+            >Home</a
+          >
+          <a
+            href="#billing"
+            class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-blue-500 hover:bg-slate-50"
+            >Billing Support</a
+          >
+          <a
+            href="#brands"
+            class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-blue-500 hover:bg-slate-50"
+            >Our Brands</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-blue-500 hover:bg-slate-50"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="min-h-screen flex flex-col bg-white">
+      <section
+        class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-to-b from-slate-50 to-white"
+      >
+        <div
+          class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-teal-50 blur-3xl opacity-50"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-blue-50 blur-3xl opacity-50"
+        ></div>
+
+        <div
+          class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        >
+          <div class="flex justify-center mb-8">
+            <div class="flex flex-col items-start select-none scale-125 origin-bottom">
+              <div class="text-4xl md:text-5xl font-extrabold tracking-tight leading-none">
+                <span style="color: #2dd4bf">arty</span>
+                <span style="color: #60a5fa">do</span>
+              </div>
+              <span
+                class="text-[#0F4C81] text-sm md:text-base font-medium mt-1 tracking-wide"
+                >Empowering Creative Ventures</span
+              >
+            </div>
+          </div>
+
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6"
+          >
+            The Home of
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500"
+              >Creative Innovation</span
+            >
+          </h1>
+
+          <p
+            class="mt-4 max-w-2xl mx-auto text-xl text-slate-600 leading-relaxed"
+          >
+            Artydo is the parent company for a family of leading art education and
+            subscription platforms. We handle the technology and billing so our
+            brands can focus on inspiring your creativity.
+          </p>
+
+          <div
+            class="mt-10 flex flex-col sm:flex-row justify-center gap-4"
+          >
+            <a
+              href="#billing"
+              class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-500 hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/25"
+            >
+              Recognize a charge?
+            </a>
+            <a
+              href="#brands"
+              class="inline-flex items-center justify-center px-8 py-3 border border-slate-200 text-base font-medium rounded-full text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm"
+            >
+              View Our Brands
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="billing" class="py-20 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <div
+              class="inline-flex items-center justify-center p-2 bg-blue-50 rounded-xl mb-4 text-blue-600"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                <line x1="2" x2="22" y1="10" y2="10"></line>
+              </svg>
+            </div>
+            <h2 class="text-3xl font-bold text-slate-900">
+              Why is "Artydo" on my bank statement?
+            </h2>
+            <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+              If you see a charge from <strong>Artydo</strong> or
+              <strong>Artydo Inc.</strong>, it is likely for a subscription to one
+              of our creative portfolio websites. We centralize billing to ensure
+              bank-level security for all our customers.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div
+              class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:shadow-md transition-shadow"
+            >
+              <div
+                class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 mb-6"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20 13c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V5l7-3 7 3z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Secure Processing
+              </h3>
+              <p class="text-slate-600">
+                We process payments centrally to maintain the highest standards of
+                data encryption and PCI compliance across all our platforms.
+              </p>
+            </div>
+
+            <div
+              class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:shadow-md transition-shadow"
+            >
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" x2="8" y1="13" y2="13"></line>
+                  <line x1="16" x2="8" y1="17" y2="17"></line>
+                  <line x1="10" x2="8" y1="9" y2="9"></line>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Unified Billing
+              </h3>
+              <p class="text-slate-600">
+                Your subscription might be for <em>SketchDaily</em>,
+                <em>PalettePro</em>, or <em>SculptHub</em>. All these services are
+                managed by Artydo.
+              </p>
+            </div>
+
+            <div
+              class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:shadow-md transition-shadow"
+            >
+              <div
+                class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-6"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"></path>
+                  <line x1="12" x2="12.01" y1="17" y2="17"></line>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">Need Help?</h3>
+              <p class="text-slate-600">
+                Don't recognize a charge? We are here to help clarify or refund
+                unintended purchases. Please contact our support team.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-blue-600 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl shadow-blue-900/10"
+          >
+            <h3 class="text-2xl font-bold mb-4">Still unsure about a charge?</h3>
+            <p class="text-blue-100 mb-8 max-w-2xl mx-auto">
+              Our support team typically responds within 24 hours. We can look up
+              your transaction ID and tell you exactly which service was purchased.
+            </p>
+            <a
+              href="mailto:support@artydo.com"
+              class="inline-flex items-center justify-center px-8 py-3 bg-white text-blue-600 rounded-full font-bold hover:bg-blue-50 transition-colors"
+            >
+              Contact Billing Support
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="brands" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">
+              Our Family of Brands
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+              Artydo powers the backend for these beloved creative communities. If
+              you subscribe to any of these, your payment is processed by Artydo.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div
+              class="group relative bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-200 transition-all duration-300"
+            >
+              <div
+                class="w-14 h-14 rounded-xl bg-orange-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-white"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 19c0-7-9-5-9-12 0-2 2-4 4-4 2 0 3 1 4 2 1-1 2-2 4-2 2 0 4 2 4 4 0 7-9 5-9 12"
+                  ></path>
+                  <path d="M12 19v3"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">SketchMasters</h3>
+              <p class="text-slate-600 mb-4">
+                Daily sketching prompts and tutorials for aspiring illustrators.
+              </p>
+              <div
+                class="flex items-center text-sm font-medium text-slate-400 group-hover:text-blue-500 transition-colors"
+              >
+                <span>Visit Website</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="ml-2"
+                  aria-hidden="true"
+                >
+                  <path d="M15 3h6v6"></path>
+                  <path d="M10 14 21 3"></path>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+              </div>
+            </div>
+
+            <div
+              class="group relative bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-200 transition-all duration-300"
+            >
+              <div
+                class="w-14 h-14 rounded-xl bg-rose-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-white"
+                  aria-hidden="true"
+                >
+                  <circle cx="13.5" cy="6.5" r="2.5"></circle>
+                  <circle cx="17.5" cy="10.5" r="2.5"></circle>
+                  <circle cx="8.5" cy="7.5" r="2.5"></circle>
+                  <circle cx="6.5" cy="12.5" r="2.5"></circle>
+                  <path d="M12 22a8 8 0 0 0 8-8"></path>
+                  <path d="M12 22a8 8 0 0 1-8-8"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">ChromaClub</h3>
+              <p class="text-slate-600 mb-4">
+                Premium watercolor and oil painting video workshops.
+              </p>
+              <div
+                class="flex items-center text-sm font-medium text-slate-400 group-hover:text-blue-500 transition-colors"
+              >
+                <span>Visit Website</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="ml-2"
+                  aria-hidden="true"
+                >
+                  <path d="M15 3h6v6"></path>
+                  <path d="M10 14 21 3"></path>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+              </div>
+            </div>
+
+            <div
+              class="group relative bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-200 transition-all duration-300"
+            >
+              <div
+                class="w-14 h-14 rounded-xl bg-emerald-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-white"
+                  aria-hidden="true"
+                >
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.29 7 12 12 20.71 7"></polyline>
+                  <line x1="12" x2="12" y1="22" y2="12"></line>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">SculptBox</h3>
+              <p class="text-slate-600 mb-4">
+                Monthly 3D modeling assets and clay sculpting kits delivered to your
+                door.
+              </p>
+              <div
+                class="flex items-center text-sm font-medium text-slate-400 group-hover:text-blue-500 transition-colors"
+              >
+                <span>Visit Website</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="ml-2"
+                  aria-hidden="true"
+                >
+                  <path d="M15 3h6v6"></path>
+                  <path d="M10 14 21 3"></path>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer id="contact" class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-4 gap-8 mb-8">
+            <div class="col-span-1 md:col-span-2">
+              <div class="text-2xl font-bold text-white mb-4 tracking-tight">
+                <span class="text-teal-400">arty</span>
+                <span class="text-blue-400">do</span>
+              </div>
+              <p class="max-w-sm mb-4">
+                Empowering Creative Ventures. Artydo provides the infrastructure
+                and security for the next generation of art technology platforms.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="text-white font-semibold mb-4">Contact</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="mailto:support@artydo.com"
+                    class="hover:text-white transition-colors"
+                    >support@artydo.com</a
+                  >
+                </li>
+                <li>
+                  <span class="block">123 Creative Avenue</span>
+                  <span class="block">San Francisco, CA 94107</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-white font-semibold mb-4">Legal</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Cookie Policy</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="border-t border-slate-800 pt-8 text-sm flex flex-col md:flex-row justify-between items-center"
+          >
+            <p>&copy; <span id="current-year"></span> Artydo Inc. All rights reserved.</p>
+            <p class="mt-2 md:mt-0">
+              Secure payments processed via Stripe &amp; PayPal.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      const header = document.getElementById("site-header");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuButton = document.getElementById("mobile-menu-button");
+      const openIcon = document.getElementById("menu-open-icon");
+      const closeIcon = document.getElementById("menu-close-icon");
+      const currentYear = document.getElementById("current-year");
+      let isMenuOpen = false;
+
+      const toggleHeader = () => {
+        if (window.scrollY > 10) {
+          header.classList.add("bg-white/95", "backdrop-blur-sm", "shadow-sm", "py-3");
+          header.classList.remove("bg-transparent", "py-5");
+        } else {
+          header.classList.remove("bg-white/95", "backdrop-blur-sm", "shadow-sm", "py-3");
+          header.classList.add("bg-transparent", "py-5");
+        }
+      };
+
+      const setMenuState = (nextState) => {
+        isMenuOpen = nextState;
+        mobileMenu.classList.toggle("hidden", !isMenuOpen);
+        openIcon.classList.toggle("hidden", isMenuOpen);
+        closeIcon.classList.toggle("hidden", !isMenuOpen);
+        menuButton.setAttribute("aria-expanded", String(isMenuOpen));
+      };
+
+      menuButton.addEventListener("click", () => {
+        setMenuState(!isMenuOpen);
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setMenuState(false));
+      });
+
+      window.addEventListener("scroll", toggleHeader);
+      toggleHeader();
+
+      if (currentYear) {
+        currentYear.textContent = String(new Date().getFullYear());
+      }
+    </script>
   </body>
 </html>
